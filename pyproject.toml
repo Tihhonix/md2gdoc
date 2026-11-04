@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2gdoc"
+version = "0.1.0"
+description = "Convert one or many Markdown files into a single Google Doc"
+requires-python = ">=3.10"
+dependencies = [
+    "markdown-it-py>=3.0",
+    "mdit-py-plugins>=0.4",
+    "pygments>=2.15",
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+md2gdoc = "md2gdoc.cli:main"
+
+[tool.setuptools]
+packages = ["md2gdoc"]
